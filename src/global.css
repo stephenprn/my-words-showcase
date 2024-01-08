@@ -1,0 +1,68 @@
+@font-face {
+  font-family: AppFont;
+  src: url(assets/VarelaRound-Regular.ttf);
+}
+
+body {
+  font-family: AppFont, Arial, sans-serif;
+  padding: 0;
+  background-color: #eef296;
+  background: linear-gradient(90deg, rgba(238,242,150,1) 0%, rgba(249,255,127,1) 50%, rgba(238,242,150,1) 100%);
+
+  position: relative;
+
+
+  min-height: 100vh;
+}
+
+body::after {
+  content: "";
+  background: url("assets/background.svg");
+  background-size: 400px 400px;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.body-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+a {
+  cursor: pointer;
+  color: #ff8f8f;
+}
+
+button {
+  cursor: pointer;
+}
+
+.paragraphs-container {
+  width: 50%;
+  color: #ff8f8f;
+}
+
+.paragraphs-container.big {
+  font-size: 2rem;
+}
+
+.button-icon {
+  height: 24px;
+  margin-right: 8px;
+}
+
+@media screen and (max-width: 900px) {
+  .paragraphs-container.big {
+    font-size: 1.4rem;
+  }
+
+  .paragraphs-container {
+    width: 100%;
+  }
+}

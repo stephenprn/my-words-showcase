@@ -1,0 +1,82 @@
+---
+interface Props {
+  href: string
+}
+
+const { href } = Astro.props;
+---
+
+<a class="wrapper" href={href} target="_blank">
+  <div class="container">
+    <button class="button">
+      <slot name="icon" />
+      <slot name="title" />
+    </button>
+  </div>
+
+  <div class="shadow"></div>
+</a>
+
+<style>
+  .wrapper {
+    height: 48px;
+    display: block;
+    position: relative;
+
+    padding-bottom: calc(-1 * 10px);
+    margin-bottom: 10px;
+  }
+
+  .wrapper:active .container {
+    transform: translateY(calc(10px));
+  }
+
+  .container {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    transition: transform 0.15s ease-in-out;
+  }
+
+  .button {
+    width: 100%;
+
+    font-family: AppFont, Arial, sans-serif;
+
+    height: 48px;
+
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
+
+    border-radius: calc(48px / 2);
+    border: 2px solid #e07e7e;
+    background: #ff8f8f;
+    height: 48px;
+    padding: 0 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .shadow {
+    position: absolute;
+    z-index: -1;
+
+    background-color: #e07e7e;
+
+    border-radius: calc(48px / 2);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: calc(-1 * 10px);
+    height: calc(48px);
+  }
+</style>
